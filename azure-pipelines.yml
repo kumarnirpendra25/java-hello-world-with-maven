@@ -25,6 +25,3 @@ pool:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-- task:
-   - script: pwd
-     displayName: test path 
