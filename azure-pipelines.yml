@@ -9,19 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/'
-    ArtifactName: 'drop'
-    publishLocation: 'FilePath'
-  displayName: 'Run a multi-line script'
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -37,3 +25,14 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+- script: pwd
+  displaName: Check the location 
+- script: ls 
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'
